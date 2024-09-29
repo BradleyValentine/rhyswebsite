@@ -11,10 +11,6 @@
     {{ partial "head.html" . }}
   </head>
 
-  <a class="logo" href="{{ site.Home.RelPermalink }}">
-    {{ partial "logo.html" . }}
-  </a>
-
   {{/* init.hmlt takes either a slice of .images or a .sourcePath that points to a bundle with images.
     An .id will be calculated if not provided. This will be used to create the URL to the data file.
   */}}
@@ -26,6 +22,7 @@
     and a valid data url.
   */}}
   <body id="gallerydeluxe" data-gd-image-data-url="{{ $gallery.imageDataUrl }}">
+    <header>{{partial "header.html"}}</header>
     <div id="gd-modal" class="gd-modal">
       <span id="gd-modal-close" class="gd-modal-close">&times;</span>
       {{ if $params.enable_exif }}
